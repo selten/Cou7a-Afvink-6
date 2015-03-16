@@ -3,9 +3,7 @@ import sys
 
 def main():
     sequentie = leesBestand('m_p53.gb');
-
-    print(sequentie)
-
+    gc_percentage = bepaalGCpercentage(sequentie);
 
 
 def leesBestand(bestandsnaam):
@@ -48,8 +46,12 @@ def leesBestand(bestandsnaam):
 
 def bepaalGCpercentage(sequentie):
     #retourneert het GC percentage
-    print(" ")
-
+    sequentie = sequentie.upper()
+    aantal_c = sequentie.count('C')
+    aantal_g = sequentie.count('G')
+    percentage = ((aantal_c + aantal_g )/len(sequentie)*100) 
+    
+    return(percentage)
 def schrijfHTMLrapport (gcPercentage, sequentie, bestandsnaam):
     #schrijft html rapport
     f = open(bestandsnaam + '_rapport.html','w')
