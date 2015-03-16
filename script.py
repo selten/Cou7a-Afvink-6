@@ -2,9 +2,9 @@ import traceback
 import sys
 
 def main():
-    sequentie = leesBestand('m_p53.gb');
-    gc_percentage = bepaalGCpercentage(sequentie);
-
+    sequentie = leesBestand('m_p53.gb')
+    gc_percentage = bepaalGCpercentage(sequentie)
+    html = schrijfHTMLrapport (gc_percentage, sequentie, bestandsnaam)
 
 def leesBestand(bestandsnaam):
     #retourneert de sequentie uit het bestand
