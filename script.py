@@ -4,7 +4,8 @@
 #Bekende bugs: geen
 
 def main():
-    sequentie = leesBestand('m_p53.gb')
+    bestandsnaam = 'm_p53.gb'
+    sequentie = leesBestand(bestandsnaam)
     gc_percentage = bepaalGCpercentage(sequentie)
     html = schrijfHTMLrapport (gc_percentage, sequentie, bestandsnaam)
 
