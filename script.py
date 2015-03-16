@@ -1,5 +1,7 @@
-import traceback
-import sys
+#Auteurs: Renske Wever, Elaine Hodenius en Peter Selten
+#Datum: 16-03-2015
+#Functie: Leest een bestand en geeft een rapport met de sequentie en gc percentage.
+#Bekende bugs: geen
 
 def main():
     sequentie = leesBestand('m_p53.gb')
