@@ -1,5 +1,10 @@
+import traceback
+import sys
+
 def main():
     sequentie = leesBestand('m_p53.gb');
+
+    print(sequentie)
 
 
 
@@ -7,13 +12,16 @@ def leesBestand(bestandsnaam):
     #retourneert de sequentie uit het bestand
     
     try:
-        file = open(bestand)
+        file = open(bestandsnaam)
 
         string = ""
         for line in file:
             string = string+"\n"+line
         file.close()
 
+        while "  " in string or '\t' in string:
+            string = string.replace('  ',' ').replace('\t','')
+        regel_array = string.split("\n")
 
         CDS = ['','']
         start_check = 0
@@ -33,13 +41,17 @@ def leesBestand(bestandsnaam):
         return Coding[CDS[0]-1:CDS[1]]
     except IOError:
         print("Kan bestand niet lezen")
-    except:
-        print("ERROR")
+    except Exception:
+        #print("ERROR")
+        print(traceback.format_exc())
+        print(sys.exc_info()[0])
 
 def bepaalGCpercentage(sequentie):
     #retourneert het GC percentage
+    print(" ")
 
 def schrijfHTMLrapport (gcPercentage, sequentie, bestandsnaam):
     #schrijft html rapport
+    print(" ")
 
 main()
