@@ -52,6 +52,11 @@ def bepaalGCpercentage(sequentie):
 
 def schrijfHTMLrapport (gcPercentage, sequentie, bestandsnaam):
     #schrijft html rapport
-    print(" ")
+    f = open(bestandsnaam + '_rapport.html','w')
+    f.write("<html>")
+    f.write("Sequentie is:" + sequentie)
+    f.write("GC Percentage is: " + gcPercentage)
+    f.write("<html>")
+    f.close()
 
 main()
