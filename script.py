@@ -59,8 +59,11 @@ def schrijfHTMLrapport (gc_percentage, sequentie, bestandsnaam):
     #schrijft html rapport
     f = open(bestandsnaam + '_rapport.html','w')
     f.write("<html>")
+    f.write("<head></head>")
+    f.write("<body>")
     f.write("Sequentie is:" + sequentie)
     f.write("GC Percentage is: " + str(gc_percentage))
+    f.write("</body>")
     f.write("<html>")
     f.close()
 
